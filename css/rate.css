@@ -1,0 +1,473 @@
+.rate-hero {
+  position: relative;
+  min-height: 52vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: calc(var(--header-height) + 44px) 10% 72px;
+  background:
+    linear-gradient(90deg, rgba(27, 22, 16, 0.55), rgba(27, 22, 16, 0.18)),
+    url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1800&auto=format&fit=crop")
+      center / cover no-repeat;
+  overflow: hidden;
+}
+
+.rate-hero-mask {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(0, 0, 0, 0.05)
+  );
+}
+
+.rate-hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.rate-hero-text p {
+  margin-bottom: 18px;
+  font-size: 0.9rem;
+  letter-spacing: 4px;
+}
+
+.rate-hero-text h1 {
+  margin-bottom: 18px;
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.rate-hero-text span {
+  display: block;
+  max-width: 580px;
+  font-size: 1.05rem;
+  line-height: 1.95;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.rate-intro,
+.pricing-section,
+.detail-section,
+.facility-section,
+.policy-section,
+.rate-cta {
+  padding: 96px 10%;
+}
+
+.rate-intro {
+  background-color: var(--color-bg-soft);
+}
+
+.rate-intro-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.rate-intro h2,
+.section-header h2,
+.rate-cta h2 {
+  font-size: 2rem;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  margin-bottom: 22px;
+  font-weight: 600;
+}
+
+.rate-intro-text {
+  max-width: 760px;
+  color: #5d5d5d;
+  font-size: 0.98rem;
+  line-height: 2;
+  margin-bottom: 36px;
+}
+
+.rate-info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.info-card {
+  background-color: #fff;
+  border-radius: 24px;
+  padding: 28px 24px 26px;
+  box-shadow: 0 20px 45px rgba(83, 60, 26, 0.08);
+  border: 1px solid rgba(154, 106, 49, 0.08);
+}
+
+.info-card-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(216, 185, 143, 0.22);
+  color: var(--color-primary);
+  margin-bottom: 18px;
+  font-size: 1.25rem;
+}
+
+.info-card h3,
+.pricing-card-head h3,
+.definition-card h3,
+.facility-card h3 {
+  font-size: 1.15rem;
+  color: #2c2014;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.info-card p,
+.pricing-card-head p,
+.definition-card p,
+.facility-card li,
+.detail-body li,
+.policy-list li,
+.rate-cta p {
+  color: #5f5b56;
+  font-size: 0.95rem;
+  line-height: 1.9;
+}
+
+.section-header {
+  max-width: 1180px;
+  margin: 0 auto 34px;
+}
+
+.pricing-section {
+  background-color: #fff;
+}
+
+.pricing-card {
+  max-width: 1180px;
+  margin: 0 auto 30px;
+  background-color: #fff;
+  border: 1px solid rgba(154, 106, 49, 0.12);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 22px 48px rgba(83, 60, 26, 0.08);
+}
+
+.pricing-card:last-of-type {
+  margin-bottom: 38px;
+}
+
+.pricing-card-head {
+  padding: 28px 32px 20px;
+  background: linear-gradient(180deg, #fbf6ef 0%, #fff 100%);
+  border-bottom: 1px solid rgba(154, 106, 49, 0.1);
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+.price-table {
+  width: 100%;
+  min-width: 860px;
+  border-collapse: collapse;
+  background-color: #fff;
+}
+
+.price-table th,
+.price-table td {
+  padding: 18px 18px;
+  text-align: left;
+  border-bottom: 1px solid rgba(154, 106, 49, 0.1);
+  vertical-align: top;
+}
+
+.price-table thead th {
+  background-color: #f7f1e8;
+  color: var(--color-primary-dark);
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.price-table tbody tr:nth-child(even) {
+  background-color: #fcfbf8;
+}
+
+.price-table tbody tr:hover {
+  background-color: #f7f1e8;
+}
+
+.price-table tbody td:first-child {
+  font-weight: 700;
+  color: #2c2014;
+}
+
+.definition-grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.definition-card {
+  background-color: var(--color-bg-soft);
+  border-radius: 24px;
+  padding: 28px 24px;
+  border: 1px solid rgba(154, 106, 49, 0.08);
+}
+
+.detail-section {
+  background-color: var(--color-bg-soft);
+}
+
+.detail-grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.detail-card {
+  background-color: #fff;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(154, 106, 49, 0.1);
+  box-shadow: 0 18px 42px rgba(83, 60, 26, 0.08);
+}
+
+.detail-card summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 22px 24px;
+  position: relative;
+}
+
+.detail-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.detail-card summary span {
+  display: block;
+  font-size: 1.1rem;
+  color: #2c2014;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.detail-card summary small {
+  display: block;
+  color: var(--color-primary);
+  font-size: 0.88rem;
+  letter-spacing: 1px;
+}
+
+.detail-card summary::after {
+  content: "\F282";
+  font-family: "bootstrap-icons";
+  position: absolute;
+  top: 26px;
+  right: 24px;
+  color: var(--color-primary);
+  font-size: 0.95rem;
+  transition: transform 0.3s ease;
+}
+
+.detail-card[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.detail-body {
+  padding: 0 24px 24px;
+  border-top: 1px solid rgba(154, 106, 49, 0.08);
+}
+
+.detail-body ul {
+  padding-top: 18px;
+}
+
+.detail-body li,
+.policy-list li,
+.facility-card li {
+  position: relative;
+  padding-left: 18px;
+}
+
+.detail-body li::before,
+.policy-list li::before,
+.facility-card li::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-cta);
+}
+
+.facility-section {
+  background-color: #fff;
+}
+
+.facility-grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.facility-card {
+  background-color: #fff;
+  border-radius: 24px;
+  padding: 28px 24px;
+  border: 1px solid rgba(154, 106, 49, 0.1);
+  box-shadow: 0 18px 42px rgba(83, 60, 26, 0.08);
+}
+
+.policy-section {
+  background-color: var(--color-bg-soft);
+}
+
+.policy-card {
+  max-width: 980px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 28px;
+  padding: 34px 32px;
+  border: 1px solid rgba(154, 106, 49, 0.1);
+  box-shadow: 0 18px 42px rgba(83, 60, 26, 0.08);
+}
+
+.policy-list {
+  display: grid;
+  gap: 10px;
+}
+
+.rate-cta {
+  text-align: center;
+  background: linear-gradient(180deg, #fff 0%, #fbf6ef 100%);
+}
+
+.rate-cta p {
+  max-width: 720px;
+  margin: 0 auto 28px;
+}
+
+.rate-cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  min-width: 158px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  letter-spacing: 1px;
+  font-size: 0.95rem;
+  transition: transform 0.35s ease, background-color 0.35s ease, color 0.35s ease;
+}
+
+.cta-btn.primary {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.cta-btn.primary:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-3px);
+}
+
+.cta-btn.secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid rgba(154, 106, 49, 0.35);
+}
+
+.cta-btn.secondary:hover {
+  background-color: #f7f1e8;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 1100px) {
+  .rate-info-grid,
+  .detail-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .facility-grid,
+  .definition-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .rate-hero {
+    min-height: 44vh;
+    padding: 110px 7% 70px;
+  }
+
+  .rate-hero-text h1 {
+    font-size: 2.4rem;
+  }
+
+  .rate-hero-text span {
+    font-size: 0.96rem;
+  }
+
+  .rate-intro,
+  .pricing-section,
+  .detail-section,
+  .facility-section,
+  .policy-section,
+  .rate-cta {
+    padding: 72px 7%;
+  }
+
+  .rate-info-grid,
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-card-head,
+  .policy-card,
+  .facility-card,
+  .info-card,
+  .definition-card {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .price-table th,
+  .price-table td {
+    padding: 15px 14px;
+  }
+
+  .rate-intro h2,
+  .section-header h2,
+  .rate-cta h2 {
+    font-size: 1.65rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .rate-hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .rate-hero-text p {
+    font-size: 0.82rem;
+  }
+
+  .cta-btn {
+    width: 100%;
+  }
+}

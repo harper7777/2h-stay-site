@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>房型詳細介紹｜2H分享家</title>
+  <meta name="description" content="查看2H分享家各房型詳細介紹、房間照片、住宿人數、房型設備與訂房資訊。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="房型詳細介紹｜2H分享家">
+  <meta property="og:description" content="查看2H分享家房型照片、空間介紹與房型資訊。">
+  <meta property="og:locale" content="zh_TW">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/room-detail.css">
+</head>
+
+<body data-page="room-detail">
+  <div id="site-header"></div>
+
+  <main>
+    <section class="detail-top-section">
+      <div class="breadcrumb reveal">
+        <a href="index.html">首頁</a>
+        <span>/</span>
+        <a href="room.html">房型介紹</a>
+        <span>/</span>
+        <strong id="breadcrumbRoomName">房型詳細</strong>
+      </div>
+
+      <div class="detail-title reveal">
+        <p id="roomCapacity">GUESTROOM</p>
+        <h1 id="roomName">房型名稱</h1>
+        <span id="roomSummary">房型簡介</span>
+      </div>
+
+      <section class="gallery-section reveal" aria-label="房型照片輪播">
+        <button type="button" class="gallery-arrow gallery-prev" id="prevSlide" aria-label="上一張照片">
+          <i class="bi bi-chevron-left"></i>
+        </button>
+
+        <div class="gallery-stage">
+          <div class="detail-slides" id="detailSlides"></div>
+
+          <button type="button" class="gallery-expand-btn" id="expandGalleryBtn" aria-label="放大查看照片">
+            <i class="bi bi-arrows-angle-expand"></i>
+          </button>
+        </div>
+
+        <button type="button" class="gallery-arrow gallery-next" id="nextSlide" aria-label="下一張照片">
+          <i class="bi bi-chevron-right"></i>
+        </button>
+      </section>
+
+      <div class="carousel-dots" id="carouselDots" aria-label="照片切換點"></div>
+    </section>
+
+    <section class="room-poetic-section reveal">
+      <div class="poetic-image-wrap">
+        <img id="storyImage" src="" alt="">
+      </div>
+
+      <div class="poetic-text">
+        <p class="section-subtitle" id="storySubtitle">ROOM STORY</p>
+        <h2 id="storyTitle">房間故事</h2>
+        <div id="storyParagraphs"></div>
+      </div>
+    </section>
+
+    <section class="room-info-section reveal">
+      <p class="section-subtitle">ROOM INFORMATION</p>
+      <h2>房型資訊</h2>
+
+      <div class="room-info-grid">
+        <div class="info-box">
+          <span>房型</span>
+          <p id="infoName">-</p>
+        </div>
+
+        <div class="info-box">
+          <span>人數</span>
+          <p id="infoCapacity">-</p>
+        </div>
+
+        <div class="info-box">
+          <span>樓層</span>
+          <p id="infoFloor">-</p>
+        </div>
+
+        <div class="info-box">
+          <span>床型</span>
+          <p id="infoBed">-</p>
+        </div>
+      </div>
+    </section>
+    <section class="price-section reveal">
+  <p class="section-subtitle">PRICE</p>
+  <h2>房價資訊</h2>
+
+  <div class="price-grid">
+    <div class="price-box">
+      <span>定價</span>
+      <p id="regularPrice">-</p>
+    </div>
+
+    <div class="price-box">
+      <span>假日</span>
+      <p id="holidayPrice">-</p>
+    </div>
+
+    <div class="price-box">
+      <span>平日</span>
+      <p id="weekdayPrice">-</p>
+    </div>
+  </div>
+
+  <div class="price-note-box">
+    <h3>平日、假日定義</h3>
+    <ul id="priceRuleList"></ul>
+  </div>
+</section>
+
+<section class="room-description-section reveal">
+  <p class="section-subtitle">DETAILS</p>
+  <h2>房型介紹</h2>
+
+  <div class="detail-list-box">
+    <ul id="roomDetailList"></ul>
+  </div>
+</section>
+
+    <section class="facility-section reveal">
+      <p class="section-subtitle">FACILITIES</p>
+      <h2>房內設備</h2>
+
+      <div class="facility-grid" id="facilityGrid"></div>
+    </section>
+
+    <section class="detail-note-section reveal">
+      <p class="section-subtitle">NOTICE</p>
+      <h2>入住提醒</h2>
+
+      <div class="note-grid">
+        <article class="note-card">
+          <h3>入住與退房</h3>
+          <p>入住時間為 15:00 後，退房時間為 11:00 前。若需提前寄放行李，建議事先聯繫。</p>
+        </article>
+
+        <article class="note-card">
+          <h3>人數確認</h3>
+          <p>為維護住宿品質，請依實際入住人數訂房。若臨時增加人數，請提前告知。</p>
+        </article>
+
+        <article class="note-card">
+          <h3>包棟需求</h3>
+          <p>多人房型或包棟需求，建議先透過 LINE 或訂房表單確認房況與可入住日期。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="detail-cta reveal">
+      <h2>準備預約這個房型了嗎？</h2>
+      <p>你可以前往訂房頁留下入住日期、人數與聯絡資訊。</p>
+
+      <div class="detail-actions">
+        <a href="room.html" class="outline-btn">返回房型列表</a>
+        <a href="booking.html" class="primary-btn" id="detailBookingBtn">立即訂房</a>
+      </div>
+    </section>
+  </main>
+
+  <div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true">
+    <button type="button" class="lightbox-close" id="closeLightbox" aria-label="關閉照片">
+      <i class="bi bi-x-lg"></i>
+    </button>
+
+    <button type="button" class="lightbox-arrow lightbox-prev" id="lightboxPrev" aria-label="上一張照片">
+      <i class="bi bi-chevron-left"></i>
+    </button>
+
+    <img id="lightboxImage" src="" alt="房型放大照片">
+
+    <button type="button" class="lightbox-arrow lightbox-next" id="lightboxNext" aria-label="下一張照片">
+      <i class="bi bi-chevron-right"></i>
+    </button>
+  </div>
+
+  <div id="site-footer"></div>
+
+  <script src="./js/layout.js"></script>
+  <script src="./data/rooms.js"></script>
+  <script src="./js/room-detail-page.js"></script>
+</body>
+</html>

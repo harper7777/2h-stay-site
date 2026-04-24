@@ -4,7 +4,7 @@ function createRoomCard(room, index) {
   article.style.setProperty("--delay", `${index * 160}ms`);
 
   article.innerHTML = `
-    <a href="${room.bookingUrl}" aria-label="查看 ${room.name} 訂房資訊">
+    <a href="${room.detailUrl}" aria-label="查看 ${room.name} 房型介紹">
       <div class="zoom-frame">
         <img src="${room.image}" alt="${room.name}">
       </div>
@@ -26,7 +26,7 @@ function createPackageCard(roomPackage, index) {
   article.innerHTML = `
     <h3>${roomPackage.name}</h3>
     <p>${roomPackage.composition}</p>
-    <a href="${roomPackage.bookingUrl}">預約此房型</a>
+    <a href="${roomPackage.detailUrl}">查看房型</a>
   `;
 
   return article;
