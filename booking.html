@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>線上訂房｜2H分享家</title>
+  <meta name="description" content="2H分享家線上訂房，選擇入住日期、退房日期與入住人數，查看可預約房型並送出訂房需求。">
+  <meta name="keywords" content="2H分享家訂房,日月潭民宿訂房,南投住宿,包棟民宿,線上訂房">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="線上訂房｜2H分享家">
+  <meta property="og:description" content="選擇入住日期與房型，為自己安排一段安靜舒適的日月潭住宿。">
+  <meta property="og:locale" content="zh_TW">
+
+  <link rel="canonical" href="https://example.com/booking.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/book.css">
+</head>
+
+<body data-page="booking">
+  <div id="site-header"></div>
+
+  <section class="booking-hero">
+    <div class="booking-hero-mask"></div>
+
+    <div class="booking-hero-text reveal">
+      <p>BOOKING</p>
+      <h1>線上訂房</h1>
+      <span>選擇日期、房型與停留方式，為旅程預留一段安靜時間</span>
+    </div>
+
+    <div class="scroll-down">
+      <span>SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <main>
+    <section class="booking-intro reveal">
+      <p class="section-subtitle">RESERVATION</p>
+      <h2>查詢適合你的住宿房型</h2>
+      <p>
+        請先選擇入住日期、退房日期與入住人數。系統會依照人數顯示適合的房型，
+        目前為前端模擬訂房流程，送出後可作為未來串接資料庫、後台管理與 CRM 的基礎。
+      </p>
+    </section>
+
+    <section class="booking-search-section reveal" aria-labelledby="bookingSearchTitle">
+      <div class="booking-search-panel">
+        <div class="booking-search-heading">
+          <p class="section-subtitle">STEP 01</p>
+          <h2 id="bookingSearchTitle">選擇入住條件</h2>
+        </div>
+
+        <form id="bookingSearchForm" class="booking-search-form">
+          <div class="booking-field">
+            <label for="checkin">入住日期</label>
+            <input id="checkin" name="checkin" type="date" required>
+          </div>
+
+          <div class="booking-field">
+            <label for="checkout">退房日期</label>
+            <input id="checkout" name="checkout" type="date" required>
+          </div>
+
+          <div class="booking-field">
+            <label for="guests">入住人數</label>
+            <select id="guests" name="guests" required>
+              <option value="">請選擇人數</option>
+              <option value="2">2 位</option>
+              <option value="4">4 位</option>
+              <option value="6">6 位</option>
+              <option value="10">10 位</option>
+              <option value="14">14 位</option>
+              <option value="24">24 位</option>
+            </select>
+          </div>
+
+          <button class="booking-search-btn" type="submit">
+            查詢空房
+          </button>
+        </form>
+
+        <p id="searchHint" class="search-hint">
+          尚未查詢。請先選擇日期與人數。
+        </p>
+      </div>
+    </section>
+
+    <section class="available-room-section" aria-labelledby="availableRoomTitle">
+      <div class="available-room-heading reveal">
+        <p class="section-subtitle">STEP 02</p>
+        <h2 id="availableRoomTitle">目前可預約房型</h2>
+        <p>
+          下方房型會依照入住人數進行初步篩選。實際房況仍需由民宿方確認。
+        </p>
+      </div>
+
+      <div id="availableRoomList" class="available-room-list"></div>
+    </section>
+
+    <section class="booking-form-section reveal" aria-labelledby="bookingFormTitle">
+      <div class="booking-form-layout">
+        <aside class="booking-summary-card">
+          <p class="section-subtitle">SELECTED ROOM</p>
+          <h2>訂房摘要</h2>
+
+          <div id="selectedRoomSummary" class="selected-room-summary">
+            <p>尚未選擇房型。</p>
+          </div>
+        </aside>
+
+        <div class="booking-form-panel">
+          <p class="section-subtitle">STEP 03</p>
+          <h2 id="bookingFormTitle">填寫訂房資料</h2>
+
+          <form id="bookingForm" class="booking-form">
+            <input id="selectedRoomId" name="selectedRoomId" type="hidden">
+
+            <div class="booking-field">
+              <label for="name">姓名</label>
+              <input id="name" name="name" type="text" placeholder="請輸入姓名" required>
+            </div>
+
+            <div class="booking-field">
+              <label for="phone">電話</label>
+              <input id="phone" name="phone" type="tel" placeholder="請輸入聯絡電話" required>
+            </div>
+
+            <div class="booking-field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="請輸入 Email" required>
+            </div>
+
+            <div class="booking-field">
+              <label for="contactTime">方便聯絡時段</label>
+              <select id="contactTime" name="contactTime">
+                <option value="不指定">不指定</option>
+                <option value="上午 09:00-12:00">上午 09:00-12:00</option>
+                <option value="下午 13:00-18:00">下午 13:00-18:00</option>
+                <option value="晚上 18:00-21:00">晚上 18:00-21:00</option>
+              </select>
+            </div>
+
+            <div class="booking-field full">
+              <label for="note">備註</label>
+              <textarea id="note" name="note" placeholder="例如：是否需要加床、同行者狀況、預計抵達時間等"></textarea>
+            </div>
+
+            <div class="booking-notice full">
+              <h3>訂房提醒</h3>
+              <p>
+                送出後代表建立訂房需求，實際入住日期、價格與付款方式仍需由民宿方再次確認。
+              </p>
+            </div>
+
+            <div class="booking-action full">
+              <button type="submit" class="submit-booking-btn">
+                送出訂房需求
+              </button>
+            </div>
+          </form>
+
+          <div id="bookingResult" class="booking-result" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="./js/layout.js"></script>
+  <script src="./js/scrollEffects.js"></script>
+  <script src="./data/rooms.js"></script>
+  <script src="./js/book.js"></script>
+</body>
+</html>

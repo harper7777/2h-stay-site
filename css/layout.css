@@ -1,0 +1,140 @@
+.site-header {
+  width: 100%;
+  height: var(--header-height);
+  background-color: rgba(255, 255, 255, 0.94);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: height 0.4s ease, box-shadow 0.4s ease;
+}
+
+.site-header.scrolled {
+  height: 58px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+}
+
+.navbar {
+  height: 100%;
+  padding: 0 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 105px;
+  height: auto;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.navitem a {
+  color: #7a4a15;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  transition: color 0.3s ease;
+}
+
+.navitem a:hover,
+.navitem a.active {
+  color: #5d0202;
+}
+
+.menu-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: #7a4a15;
+  margin: 6px auto;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.site-footer {
+  background-color: #fff;
+  padding: 38px 10%;
+  text-align: center;
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.social a i {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+  padding: 20px;
+}
+
+.social a i:hover {
+  color: #111;
+}
+
+.site-footer p {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    height: auto;
+  }
+
+  .navbar {
+    min-height: 70px;
+    padding: 14px 5%;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-toggle.is-open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .menu-toggle.is-open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.is-open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .nav-menu {
+    display: none;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 20px;
+    padding: 12px 0 4px;
+  }
+
+  .nav-menu.is-open {
+    display: flex;
+  }
+
+  .navitem a {
+    font-size: 0.82rem;
+  }
+}
