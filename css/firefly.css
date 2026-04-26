@@ -1,0 +1,165 @@
+/* 基礎設定 */
+body {
+    background-color: #fafafa;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 標題區塊 */
+.page-header {
+    padding: 120px 0 80px;
+    text-align: center;
+}
+
+.sub-title {
+    display: block;
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: #8c7654;
+    margin-bottom: 15px;
+}
+
+.page-header h1 {
+    font-size: 2.8rem;
+    font-weight: 500;
+    color: #333;
+    letter-spacing: 6px;
+}
+
+.header-line {
+    width: 40px;
+    height: 1px;
+    background: #333;
+    margin: 30px auto 0;
+}
+
+/* 交錯內容區塊核心代碼 */
+.content-block {
+    padding: 100px 0;
+}
+
+.block-container {
+    display: flex;
+    align-items: center;
+    gap: 8%; /* 圖片與文字間的距離 */
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* 讓偶數區塊(或帶有alternate的)圖片在右、文字在左 */
+.content-block.alternate .block-container {
+    flex-direction: row-reverse;
+}
+
+.block-image {
+    flex: 1.2; /* 圖片占比較多 */
+}
+
+.block-text {
+    flex: 1;
+    padding: 20px;
+}
+
+.block-text h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #444;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.block-text h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 1px;
+    background: #8c7654;
+}
+
+.block-text p {
+    line-height: 2.2;
+    color: #666;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+/* 響應式：手機版改為上下堆疊 */
+@media (max-width: 992px) {
+    .block-container, 
+    .content-block.alternate .block-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .block-text {
+        text-align: center;
+    }
+    
+    .block-text h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* 底部按鈕 */
+.bottom-cta {
+    padding: 100px 0;
+    background: #f4f1ed;
+    text-align: center;
+}
+
+.btn-primary {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 18px 50px;
+    border: 1px solid #333;
+    color: #333;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: all 0.4s;
+}
+
+.btn-primary:hover {
+    background: #333;
+    color: #fff;
+}
+
+/* =========================
+   圖片版權標註風格 (微光浮水印)
+========================= */
+.zoom-box {
+    position: relative; /* 確保浮水印能相對於圖片區塊定位 */
+}
+
+.photo-credit {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    z-index: 10;
+    opacity: 0.35; /* 預設半透明，融入暗色背景 */
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: auto;
+}
+
+.photo-credit:hover {
+    opacity: 1; /* 滑鼠移入時完全顯示 */
+    transform: translateY(-2px); 
+}
+
+.photo-credit a {
+    color: #ffffff; 
+    font-family: 'Helvetica Neue', Helvetica, 'Noto Serif TC', sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    /* 加上黑色柔和陰影，確保在螢火蟲照片的亮處也能看清楚文字 */
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8), 0 0 2px rgba(0,0,0,0.5); 
+}
