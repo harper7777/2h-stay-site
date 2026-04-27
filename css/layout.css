@@ -93,7 +93,7 @@
   margin-bottom: 10px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 896px) {
   .site-header {
     height: 86px;
   }
@@ -323,7 +323,7 @@
 }
 
 /* 平板 / 手機 */
-@media (max-width: 768px) {
+@media (max-width: 896px) {
   .site-header {
     height: 54px;
   }
