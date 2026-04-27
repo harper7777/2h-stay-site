@@ -3,10 +3,15 @@
 ========================= */
 
 .booking-hero {
-  height: 72vh;
-  min-height: 520px;
   position: relative;
+  min-height: 240px;
+  height: 48vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: calc(var(--header-height) + 34px) 10% 64px;
   overflow: hidden;
+
   background-image: url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1800&auto=format&fit=crop");
   background-size: cover;
   background-position: center;
@@ -19,7 +24,7 @@
   background-image: inherit;
   background-size: cover;
   background-position: center;
-  transform: scale(1.15);
+  transform: scale(1.12);
   animation: bookingHeroZoom 7s ease forwards;
 }
 
@@ -35,17 +40,15 @@
   z-index: 1;
   background: linear-gradient(
     90deg,
-    rgba(0, 0, 0, 0.48),
-    rgba(0, 0, 0, 0.22),
-    rgba(0, 0, 0, 0.08)
+    rgba(20, 16, 12, 0.58),
+    rgba(20, 16, 12, 0.28),
+    rgba(20, 16, 12, 0.08)
   );
 }
 
 .booking-hero-text {
-  position: absolute;
+  position: relative;
   z-index: 2;
-  top: 54%;
-  left: 10%;
   max-width: 760px;
   color: #fff;
 }
@@ -57,16 +60,20 @@
 }
 
 .booking-hero-text h1 {
-  font-size: 4.2rem;
-  letter-spacing: 10px;
+  font-size: clamp(2.6rem, 4.2vw, 4rem);
+  letter-spacing: 8px;
   margin-bottom: 18px;
+  line-height: 1.25;
 }
 
 .booking-hero-text span {
-  font-size: 1.1rem;
+  display: block;
+  max-width: 640px;
+  font-size: 1.05rem;
+  line-height: 1.9;
   letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.92);
 }
-
 /* =========================
    Intro
 ========================= */

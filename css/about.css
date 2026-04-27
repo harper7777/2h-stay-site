@@ -1,0 +1,464 @@
+/* =========================
+   About Hero
+========================= */
+
+.about-hero {
+  position: relative;
+  height: calc(100dvh - var(--header-height));
+  min-height: 620px;
+  max-height: 780px;
+  overflow: hidden;
+  background-color: #111;
+}
+
+.about-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1800&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.14);
+  animation: aboutHeroZoom 7s ease forwards;
+}
+
+@keyframes aboutHeroZoom {
+  to {
+    transform: scale(1.03);
+  }
+}
+
+.about-hero-mask {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(20, 16, 10, 0.62),
+      rgba(20, 16, 10, 0.26),
+      rgba(20, 16, 10, 0.08)
+    );
+}
+
+.about-hero-text {
+  position: absolute;
+  z-index: 2;
+  top: 52%;
+  left: 10%;
+  max-width: 760px;
+  color: #fff;
+}
+
+.about-hero-text p {
+  margin-bottom: 18px;
+  font-size: 0.95rem;
+  letter-spacing: 6px;
+}
+
+.about-hero-text h1 {
+  margin-bottom: 20px;
+  font-size: clamp(3.2rem, 6vw, 5rem);
+  line-height: 1.18;
+  letter-spacing: 10px;
+  font-weight: 700;
+}
+
+.about-hero-text span {
+  display: block;
+  max-width: 680px;
+  font-size: 1.08rem;
+  letter-spacing: 2px;
+  line-height: 2;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* =========================
+   Opening
+========================= */
+
+.story-opening {
+  padding: 118px 10% 96px;
+  text-align: center;
+  background-color: var(--color-bg-soft);
+}
+
+.story-opening h2,
+.slow-living-inner h2,
+.meaning-card h2,
+.poem-panel h2,
+.story-final h2 {
+  margin-bottom: 28px;
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  line-height: 1.55;
+  letter-spacing: 3px;
+  font-weight: 600;
+  color: #2c2014;
+}
+
+.story-opening p {
+  max-width: 820px;
+  margin: 0 auto 18px;
+  color: #5f5b56;
+  line-height: 2.2;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   Story Chapter
+========================= */
+
+.story-chapter {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  gap: clamp(42px, 6vw, 90px);
+  align-items: center;
+  padding: 120px clamp(32px, 8vw, 140px);
+  background-color: #fff;
+}
+
+.story-chapter-right {
+  grid-template-columns: 0.88fr 1.12fr;
+  background-color: #faf7f1;
+}
+
+.story-chapter-right .story-image-wrap {
+  order: 2;
+}
+
+.story-chapter-right .story-text-card {
+  order: 1;
+}
+
+.story-image-wrap {
+  overflow: hidden;
+  min-height: 520px;
+  border-radius: 0 80px 0 80px;
+  box-shadow: 0 28px 70px rgba(83, 60, 26, 0.16);
+}
+
+.story-chapter-right .story-image-wrap {
+  border-radius: 80px 0 80px 0;
+}
+
+.story-image-wrap img {
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  object-fit: cover;
+  transform: scale(1.12);
+  transition: transform 2s ease;
+}
+
+.story-chapter.show .story-image-wrap img {
+  transform: scale(1);
+}
+
+.story-text-card {
+  position: relative;
+  padding: clamp(34px, 5vw, 58px);
+  background-color: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(154, 106, 49, 0.1);
+  box-shadow: 0 20px 50px rgba(83, 60, 26, 0.1);
+}
+
+.story-label {
+  margin-bottom: 20px;
+  color: var(--color-primary);
+  font-size: 0.82rem;
+  letter-spacing: 5px;
+}
+
+.story-text-card h2 {
+  margin-bottom: 28px;
+  color: #2c2014;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.35;
+  letter-spacing: 4px;
+  font-weight: 500;
+}
+
+.story-text-card p {
+  margin-bottom: 18px;
+  color: #5f5b56;
+  line-height: 2.15;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   Slow Living
+========================= */
+
+.slow-living-section {
+  padding: 130px 10%;
+  background:
+    linear-gradient(rgba(36, 28, 18, 0.56), rgba(36, 28, 18, 0.56)),
+    url("https://images.unsplash.com/photo-1510798831971-661eb04b3739?q=80&w=1800&auto=format&fit=crop")
+      center / cover fixed;
+}
+
+.slow-living-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: clamp(42px, 6vw, 72px);
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+}
+
+.slow-living-inner p {
+  max-width: 720px;
+  margin: 0 auto 18px;
+  color: #5f5b56;
+  line-height: 2.2;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   Meaning
+========================= */
+
+.meaning-section {
+  padding: 118px 10%;
+  background-color: #fff;
+}
+
+.meaning-card {
+  max-width: 1180px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.meaning-grid {
+  margin-top: 54px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.meaning-item {
+  padding: 48px 42px;
+  text-align: left;
+  border-radius: 30px;
+  background-color: var(--color-bg-soft);
+  border: 1px solid rgba(154, 106, 49, 0.1);
+  box-shadow: 0 20px 45px rgba(83, 60, 26, 0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.meaning-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 28px 60px rgba(83, 60, 26, 0.13);
+}
+
+.meaning-item span {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--color-primary);
+  font-size: 0.82rem;
+  letter-spacing: 4px;
+}
+
+.meaning-item h3 {
+  margin-bottom: 18px;
+  color: #2c2014;
+  font-size: 1.55rem;
+  letter-spacing: 2px;
+}
+
+.meaning-item p {
+  color: #5f5b56;
+  line-height: 2.05;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   Poem Section
+========================= */
+
+.poem-section {
+  position: relative;
+  padding: 130px 10%;
+  background:
+    linear-gradient(90deg, rgba(250, 247, 241, 0.94), rgba(250, 247, 241, 0.78)),
+    url("https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1800&auto=format&fit=crop")
+      center / cover;
+}
+
+.poem-panel {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: clamp(44px, 7vw, 80px);
+  background-color: rgba(255, 255, 255, 0.88);
+  border-radius: 36px;
+  box-shadow: 0 24px 70px rgba(83, 60, 26, 0.12);
+  text-align: center;
+}
+
+.poem-content {
+  margin-top: 40px;
+}
+
+.poem-content p {
+  margin-bottom: 14px;
+  color: #3c342b;
+  font-size: clamp(1.05rem, 2vw, 1.28rem);
+  line-height: 2;
+  letter-spacing: 2px;
+}
+
+.poem-content p:nth-child(3) {
+  margin-top: 36px;
+}
+
+/* =========================
+   Final
+========================= */
+
+.story-final {
+  padding: 120px 10% 130px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.story-final p {
+  max-width: 760px;
+  margin: 0 auto 18px;
+  color: #5f5b56;
+  line-height: 2.15;
+  letter-spacing: 1px;
+}
+
+.story-actions {
+  margin-top: 46px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.story-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 156px;
+  height: 48px;
+  padding: 0 30px;
+  border-radius: 999px;
+  letter-spacing: 2px;
+  transition: transform 0.35s ease, background-color 0.35s ease, color 0.35s ease;
+}
+
+.story-btn.primary {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.story-btn.primary:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-4px);
+}
+
+.story-btn.secondary {
+  border: 1px solid rgba(154, 106, 49, 0.38);
+  color: var(--color-primary);
+}
+
+.story-btn.secondary:hover {
+  background-color: #f7f1e8;
+  transform: translateY(-4px);
+}
+
+/* =========================
+   RWD
+========================= */
+
+@media (max-width: 1024px) {
+  .story-chapter,
+  .story-chapter-right {
+    grid-template-columns: 1fr;
+    padding: 92px 7%;
+  }
+
+  .story-chapter-right .story-image-wrap,
+  .story-chapter-right .story-text-card {
+    order: initial;
+  }
+
+  .story-image-wrap,
+  .story-image-wrap img {
+    min-height: 430px;
+  }
+
+  .meaning-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .slow-living-section {
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    min-height: 560px;
+  }
+
+  .about-hero-text {
+    left: 8%;
+    right: 8%;
+  }
+
+  .about-hero-text h1 {
+    letter-spacing: 6px;
+  }
+
+  .story-opening,
+  .meaning-section,
+  .poem-section,
+  .story-final {
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+
+  .story-image-wrap,
+  .story-chapter-right .story-image-wrap {
+    border-radius: 32px;
+  }
+
+  .story-text-card {
+    padding: 34px 28px;
+  }
+
+  .meaning-item {
+    padding: 36px 28px;
+  }
+
+  .poem-panel {
+    border-radius: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .about-hero-text p {
+    font-size: 0.82rem;
+    letter-spacing: 4px;
+  }
+
+  .about-hero-text span {
+    font-size: 0.95rem;
+  }
+
+  .story-image-wrap,
+  .story-image-wrap img {
+    min-height: 340px;
+  }
+
+  .story-btn {
+    width: 100%;
+  }
+}

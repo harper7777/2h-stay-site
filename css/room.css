@@ -1,17 +1,42 @@
 /* room.css */
 
 /* =========================
+   First View
+   Header + Hero + Intro 剛好形成第一屏
+========================= */
+
+/* =========================
+   First View
+   Header + Hero + Intro 剛好形成第一屏
+========================= */
+
+.room-firstview {
+  margin-top: var(--header-height);
+  height: calc(100svh - var(--header-height));
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+/* =========================
    Room Hero
+   Hero 自適應剩餘高度
+   文字依照 Hero 高度等比例縮放
 ========================= */
 
 .room-hero {
-  height: 72vh;
-  min-height: 520px;
+  position: relative;
+  width: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+
   background-image: url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1800&auto=format&fit=crop");
   background-size: cover;
-  background-position: center;
-  position: relative;
-  overflow: hidden;
+  background-position: center center;
+
+  /* 讓 cqh 可以依照 .room-hero 高度計算 */
+  container-type: size;
 }
 
 .room-hero::before {
@@ -20,8 +45,8 @@
   inset: 0;
   background-image: inherit;
   background-size: cover;
-  background-position: center;
-  transform: scale(1.15);
+  background-position: center center;
+  transform: scale(1.12);
   animation: heroImageZoom 7s ease forwards;
 }
 
@@ -34,63 +59,102 @@
 .room-hero-mask {
   position: absolute;
   inset: 0;
+  z-index: 1;
   background: linear-gradient(
     90deg,
     rgba(0, 0, 0, 0.48),
-    rgba(0, 0, 0, 0.18),
-    rgba(0, 0, 0, 0.05)
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.08)
   );
-  z-index: 1;
 }
 
+/* 
+  關鍵：
+  1. 用 grid 垂直置中
+  2. 用 max-height 限制文字區不能超出 Hero
+  3. 用 overflow hidden 作為最後保護
+*/
 .room-hero-text {
   position: absolute;
   z-index: 2;
-  top: 54%;
-  left: 10%;
+  left: clamp(22px, 8vw, 10%);
+  right: clamp(22px, 8vw, 10%);
+  top: 50%;
+  transform: translateY(-50%);
+
+  max-height: 82cqh;
+  overflow: hidden;
+
+  display: grid;
+  align-content: center;
+
   color: #fff;
 }
 
+/* 英文小標：跟 Hero 高度縮放 */
 .room-hero-text p {
-  letter-spacing: 6px;
-  font-size: 0.95rem;
-  margin-bottom: 18px;
+  font-size: clamp(0.58rem, 3.1cqh, 0.95rem);
+  letter-spacing: clamp(2px, 1.2cqh, 6px);
+  margin-bottom: clamp(3px, 1.5cqh, 16px);
+  line-height: 1.15;
 }
 
+/* 主標：跟 Hero 高度縮放 */
 .room-hero-text h1 {
-  font-size: 4.2rem;
-  letter-spacing: 10px;
-  margin-bottom: 18px;
+  font-size: clamp(1.25rem, 12.5cqh, 4.2rem);
+  letter-spacing: clamp(1px, 1.7cqh, 10px);
+  margin-bottom: clamp(3px, 1.5cqh, 16px);
+  line-height: 1.08;
 }
 
+/* 說明文字：跟 Hero 高度縮放 */
 .room-hero-text span {
-  font-size: 1.1rem;
-  letter-spacing: 2px;
+  display: block;
+  max-width: 720px;
+  font-size: clamp(0.62rem, 3.2cqh, 1.05rem);
+  line-height: 1.42;
+  letter-spacing: clamp(0.5px, 0.45cqh, 2px);
 }
 
 /* =========================
    Intro
+   固定高度，讓 Hero 自動吃剩餘空間
 ========================= */
 
 .room-intro {
-  padding: 10px 10% 70px;
+  flex: 0 0 230px;
+  height: 230px;
+  padding: 22px 8% 28px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
   text-align: center;
   background-color: #fff;
+  overflow: hidden;
+}
+
+.room-intro .section-subtitle {
+  margin-bottom: 10px;
 }
 
 .room-intro h2,
 .package-section h2 {
-  font-size: 2rem;
+  font-size: clamp(1.7rem, 3vw, 2.45rem);
   letter-spacing: 2px;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
+  line-height: 1.25;
 }
 
 .room-intro p {
-  max-width: 760px;
+  max-width: 860px;
   margin: 0 auto;
   color: #555;
+  line-height: 1.75;
+  font-size: clamp(0.88rem, 1.2vw, 1rem);
 }
-
 /* =========================
    Room Zoom List
    重點修正區：避免 RWD 破版
@@ -323,13 +387,50 @@
 ========================= */
 
 @media (max-width: 768px) {
-  .room-hero-text {
-    left: 8%;
-    right: 8%;
+  .room-firstview {
+    margin-top: 54px;
+    height: calc(100svh - 54px);
   }
 
-  .room-hero-text h1 {
-    font-size: 2.6rem;
+  .room-hero {
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+
+  .room-hero-text {
+    left: 7%;
+    right: 7%;
+    top: 50%;
+    max-height: 78cqh;
+  }
+
+  .room-intro {
+    flex: 0 0 clamp(190px, 31svh, 220px);
+    height: clamp(190px, 31svh, 220px);
+    padding: 14px 6% 18px;
+  }
+
+  .room-intro .section-subtitle {
+    margin-bottom: 7px;
+    font-size: clamp(0.72rem, 2.5vw, 0.84rem);
+    letter-spacing: 5px;
+  }
+
+  .room-intro h2 {
+    font-size: clamp(1.32rem, 6.2vw, 2rem);
+    margin-bottom: 7px;
+    line-height: 1.15;
+    letter-spacing: 1px;
+  }
+
+  .room-intro p {
+    max-width: 94%;
+    font-size: clamp(0.75rem, 2.7vw, 0.86rem);
+    line-height: 1.55;
+  }
+
+  .scroll-down {
+    display: none;
   }
 
   .zoom-list-section {
@@ -348,25 +449,44 @@
     height: 420px;
   }
 
-  .room-intro,
   .package-section {
     padding-left: 7%;
     padding-right: 7%;
   }
 }
 
-/* =========================
-   RWD：小手機
-========================= */
-
 @media (max-width: 420px) {
-  .room-hero-text h1 {
-    font-size: 2.2rem;
-    letter-spacing: 6px;
+  .room-firstview {
+    margin-top: 54px;
+    height: calc(100svh - 54px);
   }
 
-  .room-hero-text span {
-    font-size: 0.95rem;
+  .room-hero-text {
+    left: 6%;
+    right: 6%;
+    top: 50%;
+    max-height: 74cqh;
+  }
+
+  .room-intro {
+    flex: 0 0 190px;
+    height: 190px;
+    padding: 12px 6% 14px;
+  }
+
+  .room-intro .section-subtitle {
+    font-size: 0.7rem;
+    margin-bottom: 6px;
+  }
+
+  .room-intro h2 {
+    font-size: clamp(1.18rem, 6vw, 1.45rem);
+    margin-bottom: 6px;
+  }
+
+  .room-intro p {
+    font-size: 0.74rem;
+    line-height: 1.5;
   }
 
   .zoom-frame {

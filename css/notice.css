@@ -1,24 +1,36 @@
+/* =========================
+   Notice Hero
+========================= */
+
 .notice-hero {
   position: relative;
-  min-height: 56vh;
+  min-height: 240px;
+  height: 48vh;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: calc(var(--header-height) + 48px) 10% 82px;
+  padding: calc(var(--header-height) + 34px) 10% 64px;
+  overflow: hidden;
+
   background:
-    linear-gradient(90deg, rgba(23, 19, 14, 0.58), rgba(23, 19, 14, 0.22)),
+    linear-gradient(
+      90deg,
+      rgba(20, 16, 12, 0.58),
+      rgba(20, 16, 12, 0.28),
+      rgba(20, 16, 12, 0.08)
+    ),
     url("https://images.unsplash.com/photo-1615873968403-89e068629265?q=80&w=1800&auto=format&fit=crop")
       center / cover no-repeat;
-  overflow: hidden;
 }
 
 .notice-hero-mask {
   position: absolute;
   inset: 0;
+  z-index: 1;
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.04),
-    rgba(0, 0, 0, 0.08)
+    rgba(0, 0, 0, 0.06)
   );
 }
 
@@ -30,26 +42,26 @@
 }
 
 .notice-hero-text p {
-  margin-bottom: 18px;
-  font-size: 0.9rem;
   letter-spacing: 6px;
+  font-size: 0.95rem;
+  margin-bottom: 18px;
 }
 
 .notice-hero-text h1 {
-  margin-bottom: 18px;
-  font-size: 3.4rem;
-  font-weight: 700;
+  font-size: clamp(2.6rem, 4.2vw, 4rem);
   letter-spacing: 8px;
-  line-height: 1.3;
+  margin-bottom: 18px;
+  line-height: 1.25;
+  font-weight: 700;
 }
 
 .notice-hero-text span {
   display: block;
-  max-width: 600px;
-  font-size: 1.08rem;
-  line-height: 1.95;
+  max-width: 640px;
+  font-size: 1.05rem;
+  line-height: 1.9;
   letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.92);
 }
 
 .notice-intro {
