@@ -172,21 +172,26 @@
 
 .story-panel {
   position: absolute;
-  top: 175px;
-  right: 4.5%;
-  width: 430px;
-  min-height: 350px;
-  background-color: rgba(255, 255, 255, 0.92);
-  padding: 42px 48px 0;
+  top: 120px;
+  right: 5%;
+
+  /* 讓右側區塊大約佔畫面的 1/3 */
+  width: clamp(520px, 34vw, 680px);
+  min-height: 430px;
+
+  background-color: rgba(255, 255, 255, 0.94);
+  padding: 56px 64px 0;
   z-index: 3;
 }
 
 .story-panel h2 {
-  font-size: 4.5rem;
-  font-weight: 400;
-  letter-spacing: 12px;
+  font-size: clamp(0.8rem, 3vw, 2.5rem);
+  font-weight: 500;
+  letter-spacing: 4px;
+  line-height: 1.15;
   margin-bottom: 24px;
   color: #111;
+  /* white-space: nowrap; */
 }
 
 .story-panel p {
@@ -195,7 +200,13 @@
   line-height: 2.1;
   margin-bottom: 44px;
 }
-
+.story-panel-label {
+  margin-bottom: 14px;
+  color: var(--color-primary);
+  font-size: 0.78rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
 .black-more-btn {
   position: absolute;
   left: 0;
